@@ -3,7 +3,7 @@
 This repo shows an example of using TMC installed flux to patch itself. There are a number of use cases where this might come into play but here are a few.
 
 * adding proxy settings to the helm or source controller(example show in this repo)
-* adding settings to the kustomize controller for mmutli-tenancy
+* adding settings to the kustomize controller for multi-tenancy
 * any other settings that are not configurable out of the box on TMC provided flux.
 
 

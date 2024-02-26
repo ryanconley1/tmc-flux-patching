@@ -1,10 +1,10 @@
 # TMC Flux Patching
 
-This repo shows an example of using TMC installed flux to patch itself. There are a number of use cases where this might come into play but here are a few.
+This repo shows an example of using TMC installed Flux to patch itself. There are a number of use cases where this might come into play but here are a few.
 
 * adding proxy settings to the helm or source controller(example show in this repo)
 * adding settings to the kustomize controller for multi-tenancy
-* any other settings that are not configurable out of the box on TMC provided flux.
+* any other settings that are not configurable out of the box on TMC provided Flux.
 
 
 ## Caution
@@ -14,12 +14,12 @@ When using this to modify the source controller take extra care in testing. If a
 
 ## How it works
 
-Flux has the ability to update existing resources using a merge patch, you can find it in the docs [here](https://fluxcd.io/flux/faq/#how-to-patch-coredns-and-other-pre-installed-addons). TMC installs Flux using Carvel packages, so we can use this patch behavior to add an overlay to the TMC provided Flux carvel packages. Carvel allows for adding overlays to packages using k8s secrets and then annotating the package with the secret name. The docs on this can be found [here](https://carvel.dev/kapp-controller/docs/v0.32.0/package-install-extensions/). We can combine these two features in order to use flux to modify itself and add any modifications we want to the package.
+Flux has the ability to update existing resources using a merge patch, you can find it in the docs [here](https://fluxcd.io/flux/faq/#how-to-patch-coredns-and-other-pre-installed-addons). TMC installs Flux using Carvel packages, so we can use this patch behavior to add an overlay to the TMC provided Flux carvel packages. Carvel allows for adding overlays to packages using k8s secrets and then annotating the package with the secret name. The docs on this can be found [here](https://carvel.dev/kapp-controller/docs/v0.32.0/package-install-extensions/). We can combine these two features in order to use Flux to modify itself and add any modifications we want to the package.
 
 
 ## Usage
 
-This repo has an example of the overlays and flux partial resources to do the patching. The two examples given are in the `gitops` directory. these will modify both the helm controller and source controller and add `HTTP_PROXY` settings. This is not a complete example of setting up gitops with TMC, if you want an example of that head over [here](https://github.com/warroyo/flux-tmc-multitenant).
+This repo has an example of the overlays and Flux partial resources to do the patching. The two examples given are in the `gitops` directory. these will modify both the helm controller and source controller and add `HTTP_PROXY` settings. This is not a complete example of setting up gitops with TMC, if you want an example of that head over [here](https://github.com/warroyo/flux-tmc-multitenant).
 
 
 1. enable TMC CD at the cluster group level

@@ -14,7 +14,7 @@ When using this to modify the source controller take extra care in testing. If a
 
 ## How it works
 
-Flux has the ability to update existing resource using a merge patch, you can find it in the docs [here](https://fluxcd.io/flux/faq/#how-to-patch-coredns-and-other-pre-installed-addons). TMC installs Flux using Carvel packages, so we can use this patch behavior to add an overlay to the TMC provided Flux carvel packages. Carvel allows for adding overlays to packages using k8s secrets and then annotating the package with the secret name. The docs on this can be found [here](https://carvel.dev/kapp-controller/docs/v0.32.0/package-install-extensions/). We can combine these two features in order to use flux to modify itself and add any modifications we want to the package.
+Flux has the ability to update existing resources using a merge patch, you can find it in the docs [here](https://fluxcd.io/flux/faq/#how-to-patch-coredns-and-other-pre-installed-addons). TMC installs Flux using Carvel packages, so we can use this patch behavior to add an overlay to the TMC provided Flux carvel packages. Carvel allows for adding overlays to packages using k8s secrets and then annotating the package with the secret name. The docs on this can be found [here](https://carvel.dev/kapp-controller/docs/v0.32.0/package-install-extensions/). We can combine these two features in order to use flux to modify itself and add any modifications we want to the package.
 
 
 ## Usage
